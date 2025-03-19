@@ -667,7 +667,7 @@ require('lazy').setup({
         clangd = {},
         gopls = {},
         pyright = {},
-        ruff = {},
+        -- ruff = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -1032,4 +1032,9 @@ require('lazy').setup({
 -- vim: ts=2 sts=2 sw=2 et
 
 vim.keymap.set('n', '\\\\', ':q<CR>', { desc = 'Exit Vim without saving' })
-vim.keymap.set('n', '<C-c>', '<ESC>', { desc = '<C-c> to ESC' })
+-- vim.api.nvim_set_keymap('n', '\\\\', ':q<CR>', { noremap = true, silent = true })
+vim.keymap.set('i', '<C-c>', '<ESC>', { desc = '<C-c> to ESC' })
+-- vim.api.nvim_set_keymap('i', '<C-c>', '<Esc>', { noremap = true, silent = true })
+
+vim.api.nvim_set_keymap('n', '<leader>t', ':terminal<CR>', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('n', '<C-u>', ':tabp<CR>', { noremap = true, silent = true })
